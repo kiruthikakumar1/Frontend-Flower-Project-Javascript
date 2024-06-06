@@ -1,0 +1,1078 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Front.html || home page */
+
+
+/* ----- Full screen nav bar starts ----- */
+.head{
+    width: 100vw;
+    height: 130px;
+    position: fixed;
+    top: 0;
+    background-color: rgb(68, 125, 158);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 999;
+}
+.head .bright{
+    text-decoration: underline;
+    color: white;
+}
+.head .bright.dark{
+    text-decoration: none;
+}
+.dark.white{
+    text-decoration: underline;
+    color: white;
+}
+.head a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+.head a:hover{
+    background-color: white;
+    color: rgb(79,152,194);
+    height: 35px;
+    padding: 4px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.logoR {
+    width: 100px;
+    height: 100px;
+    border: 10px groove rgba(255, 255, 255,0.8);
+    border-radius: 0 15px 0 15px;
+}
+
+.royal {
+    color: white;
+    font-weight: bold;
+    word-spacing: 3px;
+}
+
+.a5{
+    width: 50px;
+    height: 50px;
+    border: none;
+    outline: none;
+}
+
+.a5:hover{
+    box-shadow: rgba(255,255,255,0.55) 0px 54px 55px, rgba(255,255,255, 0.32) 0px -12px 30px, rgba(255,255,255, 0.32) 0px 4px 6px, rgba(255,255,255, 0.37) 0px 12px 13px, rgba(255,255,255, 0.25) 0px -3px 5px;
+}
+.head .cartcount{
+    background-color: white;
+    color: #0e1a49;
+    position: absolute;
+    top: 35px;
+    right: 70px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    border: none;
+    border-radius: 50%;
+}
+
+/* ----- Full screen nav bar ends ----- */
+
+/* ----- small screen nav bar starts ----- */
+
+.hambut{
+    display: none;
+}
+.bar{
+    width: 150px;
+    height: 300px;
+    background-color: rgba(68, 125, 158,0.8);
+    position: sticky;
+    top: 130px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow:  rgba(255,255,255,0.55) 0px 54px 55px, rgba(255,255,255, 0.32) 0px -12px 30px, rgba(255,255,255, 0.32) 0px 4px 6px, rgba(255,255,255, 0.37) 0px 12px 13px, rgba(255,255,255, 0.25) 0px -3px 5px;
+    display: none;
+    justify-content: center;
+    transition: 0.5s;
+    z-index: 998;
+}
+#smallbr{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+#smallbr a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 10px;
+    text-align: center;
+    padding: 4px;
+}
+
+#smallbr .aa5{
+    margin-left: 20px;
+    position: relative;
+    padding: 6px;
+    width: 100%;
+    height: 60px;
+}
+#smallbr .cartcount{
+    background-color: white;
+    color: #0e1a49;
+    position: absolute;
+    top:0;
+    right: 70px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    border: none;
+    border-radius: 50%;
+}
+/* ----- Small screen nav bar ends ------ */
+
+
+/* ----- Add to cart sidebar starts ----- */
+.sidebar{
+    width: 450px;
+    height: 100%;
+    background-color: rgb(68, 125, 158);
+    color: white;
+    position: fixed;
+    right:-300px;
+    top: 0;
+    z-index: 1000;
+    padding: 20px;
+    border-radius: 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-shadow:  rgba(255,255,255,0.55) 0px 54px 55px, rgba(255,255,255, 0.32) 0px -12px 30px, rgba(255,255,255, 0.32) 0px 4px 6px, rgba(255,255,255, 0.37) 0px 12px 13px, rgba(255,255,255, 0.25) 0px -3px 5px;
+    display: none;
+    transition: 0.5s;
+}
+
+.sidebar.start{
+    display: block;
+    right: 0;
+}
+
+.cartbar{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 2px solid whitesmoke;
+    padding: 10px;
+}
+
+.delete{
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
+.cartitems{
+    padding: 10px;
+}
+
+.items{
+    display: flex;
+    margin-bottom: 20px;
+    column-gap: 35px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid white;
+}
+
+.cartimg img{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    padding: 3px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 2px;
+    box-shadow:rgba(255,255,255,0.55) 0px 54px 55px, rgba(255,255,255, 0.32) 0px -12px 30px, rgba(255,255,255, 0.32) 0px 4px 6px, rgba(255,255,255, 0.37) 0px 12px 13px, rgba(255,255,255, 0.25) 0px -3px 5px;
+}
+
+.cartinfo{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.cartinfo div{
+    gap: 10px;
+}
+
+.quant{
+    display: flex;
+}
+
+#myInput{
+    width: 45px;
+    border: none;
+    outline: none;
+    background-color: white;
+    color: rgb(68, 125, 158);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.deletecart{
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ------ Add to cart sidebar ends ----- */
+
+/* ----- Eye div starts ----- */
+#eye{
+    width: 100%;
+    height: 600px;
+    padding-top: 130px;
+    position: relative;
+}
+#eye2{
+    background-image: url("images/flower8.jpg");
+    background-position: center;
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#eye3{
+    position: absolute;
+    color: white;
+    font-style: italic;
+    top: 300px;
+    left: 150px;
+}
+#eye3 h1{
+    color: pink;
+}
+#eye3 .nows{
+    background-color: white;
+    display: inline-block;
+    padding: 8px;
+    border-radius: 8px;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+#eye3 .nows a{
+    text-decoration: none;
+    color: rgb(218, 41, 71);
+}
+#eye3 .nows a:hover{
+    box-shadow: rgba(255,255,255,0.55) 0px 54px 55px, rgba(255,255,255, 0.32) 0px -12px 30px, rgba(255,255,255, 0.32) 0px 4px 6px, rgba(255,255,255, 0.37) 0px 12px 13px, rgba(255,255,255, 0.25) 0px -3px 5px;
+}
+
+/* ----- Eye div ends here ----- */
+
+
+/* ----- Home div starts ----- */
+#home{
+    margin-top: 50px;
+    padding: 20px;
+}
+.home1{
+    width: 100%;
+   color: black;
+   font-weight: bold;
+}
+.imcenter{
+    object-fit: cover;
+    object-position: center;
+   width: 40%;
+}
+
+#homeimg{
+    margin: 20px 0;
+    text-align: center;
+ 
+}
+
+
+#home,#Products,#features{
+    z-index: 100;
+}
+/* ----- Home div ends ----- */
+
+
+/* ----- Ban div starts ----- */
+#ban{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    position: relative;
+}
+.bans{
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    
+}
+#ban1{
+    background-image: url("images/flower10.jpg");
+    background-position: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#ban2{
+    background-image: url("images/flower11.jpg");
+    background-position: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+#ban3{
+    background-image: url("images/flower12.jpg");
+    background-position: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#ban4{
+    background-image: url("images/flower4.jpg");
+    background-position: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#nose1{
+    position: absolute;
+    color: white;
+    font-style: italic;
+    top: 50px;
+    left: 80px;
+    font-weight: bold;
+}
+#nose2{
+    position: absolute;
+    color: white;
+    font-style: italic;
+    top: 100px;
+    left: 450px;
+    font-weight: bold;
+}
+#nose3{
+    position: absolute;
+    color: white;
+    font-style: italic;
+    top: 180px;
+    left: 880px;
+    font-weight: bold;
+}
+#nose4{
+    position: absolute;
+    color: white;
+    font-style: italic;
+    top: 250px;
+    right: 50px;
+    font-weight: bold;
+}
+/* ----- Ban div ends ----- */
+
+/* ----- Feature div starts ----- */
+
+#features{
+    width: 100%;
+    height: auto;
+    padding: 130px 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5;
+   
+}
+#features h1{
+    text-align: center;
+    color: rgb(68, 125, 158);
+    margin-bottom: 20px;
+}
+
+#features p{
+    margin: 0 20px 20px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+#features p span{
+    font-style: italic;
+    color: rgb(68, 125, 158);
+    font-weight: bold;
+}
+.feat2{
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+}
+#fes,#must,.reach{
+    display: none;
+    flex-direction: column;
+
+}
+.fimg{
+    
+    width: 40%;
+    height: 40%;
+    object-fit: cover;
+    object-position: center;
+    background-color: rgb(68, 125, 158);
+    border: 2px groove transparent;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.finfo{
+    margin-left: 50px;
+    width: 40%;
+    height: 40%;
+    color: black;
+}
+.finfo h3 img{
+    width: 300px;
+    height: 200px;
+    display: block;
+    margin: 5px auto;
+    border-radius: 10px;
+}
+
+
+.game{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.quizimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+    column-gap: 60px;
+   
+}
+
+.quizimg img{
+    width: 250px;
+    height: 250px;
+    border-radius: 5px;
+    background-color: white;
+    border: 2px groove transparent;
+    padding: 2px;
+}
+
+.quizimg img:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding: 5px;
+    background-color: white;
+}
+
+#newmsg{
+    background-color: rgb(68, 125, 158);
+    color: white;
+    font-weight: bold;
+    width: 300px;
+    height: 150px;
+    border: 5px inset #bea78f;
+    border-radius: 15px 0 15px 0;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-style: italic;
+    cursor: pointer;
+}
+
+.newmsg.newopen{
+    display: flex;
+}
+
+/* ----- Feature div ends ----- */
+
+/* ----- Footer starts ----- */
+
+.foot{
+    text-align: center;
+    background-color: rgb(68, 125, 158);
+    height: 350px;
+    color:white;
+    font-style: italic;
+    font-weight: bold;
+    padding-top: 20px;
+   
+    
+}
+.footii{
+    text-align: center;
+    background-color: rgb(68, 125, 158);
+    height: 350px;
+    color:white;
+    font-style: italic;
+    font-weight: bold;
+    padding-top: 20px;
+    margin-top: 30px;
+}
+
+.icon{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
+/* ----- Footer Ends ----- */
+/* ------------- Front.html || home page ends ------------ */
+
+/* ------------- Login.html || Login page Starts ------------ */
+
+#eye4{
+    width: 450px;
+    height: 300px;
+    background-color: rgba(255, 192, 203,0.7);
+    position: absolute;
+    color: white;
+    font-style: italic;
+    top: 250px;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    padding: 20px;
+}
+#eye4 button{
+    width: 60px;
+    height: 40px;
+    background-color: white;
+    color: rgb(220, 58, 85);
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 900;
+    font-style:italic ;
+}
+.login{
+    width: 300px;
+    height: 40px;
+    text-align: center;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    font-weight: 900;
+    font-style: italic;
+}
+.able{
+    width: 100%;
+    padding-top: 50px;
+    padding-left: 20px;
+}
+/* ------------- Login.html || Login page ends ------------ */
+
+
+/* ------------- Product.html || Product page Starts ------------ */
+.Products_details{
+    padding-top: 160px;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
+.i1{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.flow1{
+    width: 100%;
+    margin-left: 30px;
+}
+
+.flower{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 10px;
+    border-radius:10px ;
+}
+
+.imgtitle{
+    width: 300px;
+    height: 350px;
+    background-color: white;
+    border: 2px inset rgb(68, 125, 158,0.5);
+    border-radius: 10px;
+    color: black;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.imgtitle:hover{
+    box-shadow: rgba(0, 0, 0, 0.55) 0px 54px 55px, rgba(0, 0, 0, 0.32) 0px -12px 30px, rgba(0, 0, 0, 0.32) 0px 4px 6px, rgba(0, 0, 0, 0.37) 0px 12px 13px, rgba(0, 0, 0, 0.25) 0px -3px 5px;
+}
+
+.imgdetails,.imgadd{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    background-color: rgb(194, 181, 181,0.4);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px;
+    font-family: 'Playfair Display', serif;
+}
+.cart:hover{
+    box-shadow: rgba(0, 0, 0, 0.55) 0px 54px 55px, rgba(0, 0, 0, 0.32) 0px -12px 30px, rgba(0, 0, 0, 0.32) 0px 4px 6px, rgba(0, 0, 0, 0.37) 0px 12px 13px, rgba(0, 0, 0, 0.25) 0px -3px 5px;
+}
+
+.wish{
+    opacity: 0.5;
+}
+.cart,.wish{
+    width: 30px;
+    height: 30px;
+}
+
+.wish.wishy{
+    opacity: 1;
+}
+
+/* ------------- Product.html || Product page ends ------------ */
+
+
+/* ------------- Contact.html || Contact page Starts ------------ */
+
+.brief{
+    width: 100%;
+    padding: 70px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.brief .brione{
+    width: 100%;
+    height: 350px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.britwo{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.ad{
+    width: 300px;
+    height: 350px;
+    background-color: white;
+    border: 2px inset rgb(68, 125, 158,0.5);
+    border-radius: 10px;
+    color: black;
+    padding: 20px;
+    text-align: center;
+}
+.sub{
+    width: 50%;
+    height: 280px;
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    padding: 20px;
+    text-align: center;
+}
+.mesemail{
+    width: 300px;
+    height: 35px;
+    text-align: center;
+    border-radius: 5px;
+    border:1px solid black;
+    font-size: 20px;
+    font-weight: 900;
+    font-style: italic;
+    margin: 20px 0 20px 0;
+}
+.mesinfo{
+    width: 300px;
+    height: 70px;
+    text-align: center;
+    border-radius: 5px;
+    border:1px solid black;
+    font-size: 20px;
+    font-weight: 900;
+    font-style: italic;
+    margin: 0 0 20px 0;
+}
+#eyelid{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.subbut{
+    width: 80px;
+    height: 40px;
+    background-color: rgb(220, 58, 85);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 900;
+    font-style:italic;
+    cursor: pointer;
+}
+#thank{
+    margin-top: 30px;
+}
+
+
+/* ------------- Contact.html || Contact page ends ------------ */
+
+/* Media queries for mobilee device */
+
+@media (max-width:320px){
+
+    
+/* ------------- front.html || home page starts ------------ */
+    .head {
+        height: 100px;
+        justify-content: space-between;
+        padding: 10px;
+        position: fixed;
+        top: 0;
+    }
+    .logoR {
+        width: 40px;
+        height: 40px;
+        border: 10px groove rgba(255, 255, 255,0.8);
+        border-radius: 0 10px 0 10px;
+    }
+    .royal {
+       font-size: 16px;
+    }
+    .head a,.head .cartcount,.head .a5{
+        display: none;
+    }
+    .hambut{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 15px;
+        height: 15px;
+    }
+    .ham{
+        width: 15px;
+        height: 3px;
+        background-color: white;
+    }
+    #home {
+        margin-top: 20px;
+    }
+    .sidebar {
+        width: 100vw;
+    }
+    .sidebar.start {
+        display: block;
+        left: 0;
+    }
+    #eye{
+        width: 100vw;
+        height: 300px;
+        padding-top: 7px;
+        position: relative;
+    }
+    #eye2{
+        background-image: url("images/flower8.jpg"); 
+        width: 100vw;
+        height: 400px;
+        background-size: contain;
+        
+    }
+    #eye3{
+        position: absolute;
+        color: white;
+        font-style: italic;
+        top: 150px;
+        left: 10px;
+    }
+    #eye3 h1{
+        color: rgb(178, 17, 44);
+        font-size: 24px;
+    }
+    #eye3 .nows {
+        padding: 4px;
+        border-radius: 8px;
+        margin-top: 7px;
+        opacity: 0.8;
+    }
+    .bar {
+        width: 150px;
+        height: 300px;
+        background-color: rgba(68, 125, 158,0.8);
+        position: absolute;
+        top: 100px;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: rgba(255,255,255,0.55) 0px 54px 55px, rgba(255,255,255, 0.32) 0px -12px 30px, rgba(255,255,255, 0.32) 0px 4px 6px, rgba(255,255,255, 0.37) 0px 12px 13px, rgba(255,255,255, 0.25) 0px -3px 5px;
+        display: none;
+        justify-content: center;
+        transition: 0.5s;
+    }
+    .bar.active{
+        display: flex;
+    }
+    #home {
+        margin-top: 10px;
+        padding: 10px;
+    }
+    #homeimg {
+        text-align: center;
+        margin: 20px 0;
+    }
+    .imcenter {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+    }
+    #ban {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        align-items: center;
+        row-gap: 10px;
+    }
+    #ban1,#ban2,#ban3,#ban4 {
+       width: 250px;
+        height: 250px;  
+    }
+    #nose1 {
+        color: white;
+        top: 10px;
+        left: 80px;
+        font-size: 24px;
+        }
+    #nose2 {
+        color: white;
+        top: 280px;
+        left: 60px;
+        font-size: 24px;
+        }
+    #nose3 {
+        color: white;
+        top: 720px;
+        left: 80px;
+        font-size: 24px;
+        }
+    #nose4 {
+        color: white;
+        top: 970px;
+        left: 40px;
+        font-size: 24px;
+        }
+
+    #features {
+        padding-top: 50px;
+    }
+    .feat2 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        justify-content: center;
+        margin-bottom: 0;
+        align-items: center;
+    }
+    .fimg {
+        width: 250px;
+        height: 250px;
+    }
+    .finfo {
+       padding: 20px;
+        margin:20px ;
+        width: 100vw;
+        height: auto;   
+    }
+    .finfo h3 img {
+        width: 250px;
+        height: 250px;
+    }
+    .quizimg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       flex-direction: column;
+       row-gap: 10px;
+    }
+    .foot {
+        text-align: center;
+        background-color: rgb(68, 125, 158);
+        height: 450px;
+        color: white;
+        font-style: italic;
+        font-weight: bold;
+        padding: 20px;
+    }
+
+    
+/* ------------- front.html || home page ends ------------ */
+
+
+/* ------------- login.html || login page starts ------------ */
+#eye4 {
+    width: 300px;
+    height: 180px;
+    background-color: rgba(255, 192, 203,0.9);
+    position: absolute;
+    color: white;
+    font-style: italic;
+    top: 120px;
+    left: 10px;
+    padding: 5px;
+    row-gap: 15px;
+}
+.login {
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: 600;
+   
+}
+#eye4 h2{
+    font-size: 15px;
+}
+
+#eye4 button {
+    height: 30px;
+    padding: 5px;
+    font-size: 13px;
+    font-weight: 700;
+}
+.able {
+    padding: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+.footii{
+    margin-top: 10px;
+    font-size: 14px;
+    padding: 5px;
+    height: 330px;
+}
+/* ------ login.html || login page ends  --------- */
+
+/* ------ product.html || product page starts  --------- */
+    .i1 {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+    .imgtitle {
+        width: 250px;
+        height: 350px;
+        padding: 10px;
+    }
+    .flow1 {
+        margin-left: 15px;
+    }
+
+    
+    .items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        row-gap: 10px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid white;
+    }
+    .cartimg img{
+        width: 200px;
+        height: 150px;
+        background-color: white;
+        padding: 3px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 2px;
+        box-shadow:rgba(255,255,255,0.55) 0px 54px 55px, rgba(255,255,255, 0.32) 0px -12px 30px, rgba(255,255,255, 0.32) 0px 4px 6px, rgba(255,255,255, 0.37) 0px 12px 13px, rgba(255,255,255, 0.25) 0px -3px 5px;
+    }
+    /* ------ product.html || product page ends  --------- */
+
+   
+    /* ------ contact.html || contact page starts  --------- */
+    .brief .brione {
+        height: auto;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+    .ad {
+       height: 300px;
+        }
+    .sub {
+        width: 300px;
+        height: auto;
+    }
+    .britwo {
+        width: 300px;
+        height: auto;
+        flex-direction: column;
+        row-gap: 10px;
+        
+    }
+     /* ------ contact.html || contact page ends  --------- */
+}
+
+ /* ------ media queries  ends  --------- */
