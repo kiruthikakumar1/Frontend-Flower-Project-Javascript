@@ -42,12 +42,24 @@ function open() {
     sidebaropen.classList.add("start")
     load()
 }
+var gallery=document.querySelectorAll(".imghead")
+
 
 function gone() {
-    let cleared = this.parentElement
+    let cleared = this.parentElement.parentElement
     cleared.remove()
     let modern = cleared.querySelector(".newtitle").textContent
+
+    for(let i=0;i<=11;i++){
+        if (modern==gallery[i].textContent){
+            var shops=gallery[i].parentElement.parentElement
+            var cartcolor=shops.querySelector(".cart")
+            cartcolor.style.backgroundColor='transparent'
+        }
+    }
+    
     n.delete(modern)
+   
     cartnumber.forEach(count => {
         count.innerHTML = n.size
     })
@@ -64,7 +76,7 @@ function add() {
     let heading = food.querySelector('.imghead').textContent
     let amount = food.querySelector('.money').textContent
     let photo = food.querySelector('.flower').src
-    this.style.backgroundColor = "lightgreen"
+    this.style.backgroundColor='lightgreen'
     if (n.has(heading) == false) {
         n.add(heading)
         tocart(heading, amount, photo)
@@ -72,23 +84,29 @@ function add() {
     else {
         alert("This product is already exist in cart")
     }
+    
 }
 
 function tocart(heading, amount, photo) {
     let added = `<div class="items">
-<div class="cartimg"><img src=${photo} alt=""></div>
-<div class="cartinfo">
-    <h3 class="newtitle">${heading}</h3>
-    <div class="quant">
-        <h4 class="newprice">Rs.<span id="currency">${amount}</span></h4>
-        <label for="quantity">Quantity:</label>
-        <input type="number" class="quantity" id="myInput" value="1" min="1" oninput="finals()">
-    </div>
-    <div>
-         <h4 id="updates">Pack of 1 : Rs. ${amount}</h4>
-    </div>
+<div class="cartimg">
+    <img src=${photo} alt="">
 </div>
-<ion-icon name="trash" class="deletecart"></ion-icon>
+<div class="cartinfo">
+    <div class=cartinfodiv>
+        <h3 class="newtitle">${heading}</h3>
+        <div class="quant">
+            <h4 class="newprice">Rs.<span id="currency">${amount}</span></h4>
+            <label for="quantity">Quantity:</label>
+            <input type="number" class="quantity" id="myInput" value="1" min="1" oninput="finals()">
+        </div>
+        <div>
+            <h4 id="updates">Pack of 1 : Rs. ${amount}</h4>
+        </div>
+    </div>
+    <img src=images/delete.png alt="" class="deletecart">
+</div>
+
 </div>`
 
     cartnumber.forEach(count => {

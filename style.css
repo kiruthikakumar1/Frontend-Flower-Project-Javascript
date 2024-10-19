@@ -1,23 +1,25 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Playfair Display', serif;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
-body{
+
+body {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 /* Front.html || home page */
 
 
 /* ----- Full screen nav bar starts ----- */
-.head{
+.head {
     width: 100vw;
     height: 130px;
     position: fixed;
@@ -30,26 +32,31 @@ body{
     justify-content: space-around;
     z-index: 999;
 }
-.head .bright{
+
+.head .bright {
     text-decoration: underline;
     color: white;
 }
-.head .bright.dark{
+
+.head .bright.dark {
     text-decoration: none;
 }
-.dark.white{
+
+.dark.white {
     text-decoration: underline;
     color: white;
 }
-.head a{
+
+.head a {
     color: white;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
 }
-.head a:hover{
+
+.head a:hover {
     background-color: white;
-    color: rgb(79,152,194);
+    color: rgb(79, 152, 194);
     height: 35px;
     padding: 4px;
     border-radius: 3px;
@@ -59,7 +66,7 @@ body{
 .logoR {
     width: 100px;
     height: 100px;
-    border: 10px groove rgba(255, 255, 255,0.8);
+    border: 10px groove rgba(255, 255, 255, 0.8);
     border-radius: 0 15px 0 15px;
 }
 
@@ -69,24 +76,38 @@ body{
     word-spacing: 3px;
 }
 
-.a5{
+#cartdivs {
+    width: 50px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+
+}
+
+.a5 {
     width: 50px;
     height: 50px;
     border: none;
     outline: none;
+
 }
 
-.a5:hover{
-    box-shadow: rgba(255,255,255,0.55) 0px 54px 55px, rgba(255,255,255, 0.32) 0px -12px 30px, rgba(255,255,255, 0.32) 0px 4px 6px, rgba(255,255,255, 0.37) 0px 12px 13px, rgba(255,255,255, 0.25) 0px -3px 5px;
+.a5:hover {
+    box-shadow: rgba(255, 255, 255, 0.55) 0px 54px 55px, rgba(255, 255, 255, 0.32) 0px -12px 30px, rgba(255, 255, 255, 0.32) 0px 4px 6px, rgba(255, 255, 255, 0.37) 0px 12px 13px, rgba(255, 255, 255, 0.25) 0px -3px 5px;
 }
-.head .cartcount{
+
+.head .cartcount {
     background-color: white;
     color: #0e1a49;
-    position: absolute;
-    top: 35px;
-    right: 70px;
     width: 25px;
     height: 25px;
+    position: absolute;
+    top: 2px;
+    right: 17px;
     text-align: center;
     border: none;
     border-radius: 50%;
@@ -96,30 +117,33 @@ body{
 
 /* ----- small screen nav bar starts ----- */
 
-.hambut{
+.hambut {
     display: none;
 }
-.bar{
+
+.bar {
     width: 150px;
     height: 300px;
-    background-color: rgba(68, 125, 158,0.8);
+    background-color: rgba(68, 125, 158, 0.8);
     position: sticky;
     top: 130px;
     padding: 20px;
     border-radius: 5px;
-    box-shadow:  rgba(255,255,255,0.55) 0px 54px 55px, rgba(255,255,255, 0.32) 0px -12px 30px, rgba(255,255,255, 0.32) 0px 4px 6px, rgba(255,255,255, 0.37) 0px 12px 13px, rgba(255,255,255, 0.25) 0px -3px 5px;
+    box-shadow: rgba(255, 255, 255, 0.55) 0px 54px 55px, rgba(255, 255, 255, 0.32) 0px -12px 30px, rgba(255, 255, 255, 0.32) 0px 4px 6px, rgba(255, 255, 255, 0.37) 0px 12px 13px, rgba(255, 255, 255, 0.25) 0px -3px 5px;
     display: none;
     justify-content: center;
     transition: 0.5s;
     z-index: 998;
 }
-#smallbr{
+
+#smallbr {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
 }
-#smallbr a{
+
+#smallbr a {
     text-decoration: none;
     color: white;
     font-size: 18px;
@@ -130,18 +154,19 @@ body{
     padding: 4px;
 }
 
-#smallbr .aa5{
+#smallbr .aa5 {
     margin-left: 20px;
     position: relative;
     padding: 6px;
     width: 100%;
     height: 60px;
 }
-#smallbr .cartcount{
+
+#smallbr .cartcount {
     background-color: white;
     color: #0e1a49;
     position: absolute;
-    top:0;
+    top: 0;
     right: 70px;
     width: 25px;
     height: 25px;
@@ -149,34 +174,35 @@ body{
     border: none;
     border-radius: 50%;
 }
+
 /* ----- Small screen nav bar ends ------ */
 
 
 /* ----- Add to cart sidebar starts ----- */
-.sidebar{
+.sidebar {
     width: 450px;
     height: 100%;
     background-color: rgb(68, 125, 158);
     color: white;
     position: fixed;
-    right:-1000px;
+    right: -500px;
     top: 0;
     z-index: 1000;
     padding: 20px;
     border-radius: 5px;
     overflow-x: hidden;
     overflow-y: auto;
-    box-shadow:  rgba(255,255,255,0.55) 0px 54px 55px, rgba(255,255,255, 0.32) 0px -12px 30px, rgba(255,255,255, 0.32) 0px 4px 6px, rgba(255,255,255, 0.37) 0px 12px 13px, rgba(255,255,255, 0.25) 0px -3px 5px;
-   
+    box-shadow: rgba(255, 255, 255, 0.55) 0px 54px 55px, rgba(255, 255, 255, 0.32) 0px -12px 30px, rgba(255, 255, 255, 0.32) 0px 4px 6px, rgba(255, 255, 255, 0.37) 0px 12px 13px, rgba(255, 255, 255, 0.25) 0px -3px 5px;
+
     transition: 1s ease-in-out;
 }
 
-.sidebar.start{
-   
+.sidebar.start {
+
     right: 0;
 }
 
-.cartbar{
+.cartbar {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
@@ -184,16 +210,21 @@ body{
     padding: 10px;
 }
 
-.delete{
+.delete,
+.deletecart {
     color: red;
     font-size: 20px;
     font-weight: bold;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }
-.cartitems{
+
+.cartitems {
     padding: 10px;
 }
 
-.items{
+.items {
     display: flex;
     margin-bottom: 20px;
     column-gap: 35px;
@@ -201,7 +232,7 @@ body{
     border-bottom: 2px solid white;
 }
 
-.cartimg img{
+.cartimg img {
     width: 100px;
     height: 100px;
     background-color: white;
@@ -209,24 +240,30 @@ body{
     object-fit: cover;
     object-position: center;
     border-radius: 2px;
-    box-shadow:rgba(255,255,255,0.55) 0px 54px 55px, rgba(255,255,255, 0.32) 0px -12px 30px, rgba(255,255,255, 0.32) 0px 4px 6px, rgba(255,255,255, 0.37) 0px 12px 13px, rgba(255,255,255, 0.25) 0px -3px 5px;
+    box-shadow: rgba(255, 255, 255, 0.55) 0px 54px 55px, rgba(255, 255, 255, 0.32) 0px -12px 30px, rgba(255, 255, 255, 0.32) 0px 4px 6px, rgba(255, 255, 255, 0.37) 0px 12px 13px, rgba(255, 255, 255, 0.25) 0px -3px 5px;
 }
 
-.cartinfo{
+.cartinfo {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+}
+
+.cartinfo .cartinfodiv {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
 }
 
-.cartinfo div{
+.cartinfo div {
     gap: 10px;
 }
 
-.quant{
+.quant {
     display: flex;
 }
 
-#myInput{
+#myInput {
     width: 45px;
     border: none;
     outline: none;
@@ -238,7 +275,7 @@ body{
     border-radius: 5px;
 }
 
-.deletecart{
+.deletecart {
     color: red;
     font-size: 20px;
     font-weight: bold;
@@ -247,13 +284,14 @@ body{
 /* ------ Add to cart sidebar ends ----- */
 
 /* ----- Eye div starts ----- */
-#eye{
+#eye {
     width: 100%;
-    height: 600px;
-    padding-top: 130px;
+    height: 500px;
+    margin-top: 120px;
     position: relative;
 }
-#eye2{
+
+#eye2 {
     background-image: url("images/flower8.jpg");
     background-position: center;
     width: 100%;
@@ -261,17 +299,20 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
 }
-#eye3{
+
+#eye3 {
     position: absolute;
     color: white;
     font-style: italic;
-    top: 300px;
+    top: 200px;
     left: 150px;
 }
-#eye3 h1{
+
+#eye3 h1 {
     color: pink;
 }
-#eye3 .nows{
+
+#eye3 .nows {
     background-color: white;
     display: inline-block;
     padding: 8px;
@@ -279,61 +320,79 @@ body{
     margin-top: 10px;
     opacity: 0.8;
 }
-#eye3 .nows a{
+
+#eye3 .nows a {
     text-decoration: none;
     color: rgb(218, 41, 71);
 }
-#eye3 .nows a:hover{
-    box-shadow: rgba(255,255,255,0.55) 0px 54px 55px, rgba(255,255,255, 0.32) 0px -12px 30px, rgba(255,255,255, 0.32) 0px 4px 6px, rgba(255,255,255, 0.37) 0px 12px 13px, rgba(255,255,255, 0.25) 0px -3px 5px;
+
+#eye3 .nows a:hover {
+    box-shadow: rgba(255, 255, 255, 0.55) 0px 54px 55px, rgba(255, 255, 255, 0.32) 0px -12px 30px, rgba(255, 255, 255, 0.32) 0px 4px 6px, rgba(255, 255, 255, 0.37) 0px 12px 13px, rgba(255, 255, 255, 0.25) 0px -3px 5px;
 }
 
 /* ----- Eye div ends here ----- */
 
 
 /* ----- Home div starts ----- */
-#home{
-    margin-top: 50px;
+#home {
+    margin-top: 20px;
     padding: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
 }
-.home1{
+
+.home1 {
     width: 100%;
-   color: black;
-   font-weight: bold;
+    color: black;
+    font-weight: bold;
 }
-.imcenter{
+
+.imcenter {
     object-fit: cover;
     object-position: center;
-   width: 40%;
+    width: 40%;
 }
 
-#homeimg{
+#homeimg {
     margin: 20px 0;
     text-align: center;
- 
+
 }
 
 
-#home,#Products,#features{
+#home,
+#Products,
+#features {
     z-index: 100;
 }
+
 /* ----- Home div ends ----- */
 
 
 /* ----- Ban div starts ----- */
-#ban{
+#ban {
     width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    position: relative;
+
 }
-.bans{
+
+.bans {
     width: 300px;
     height: 300px;
     padding: 20px;
-    
+
 }
-#ban1{
+
+#ban1,
+#ban2,
+#ban3,
+#ban4 {
+    position: relative;
+}
+
+#ban1 {
     background-image: url("images/flower10.jpg");
     background-position: center;
     width: 300px;
@@ -342,7 +401,8 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
 }
-#ban2{
+
+#ban2 {
     background-image: url("images/flower11.jpg");
     background-position: center;
     width: 300px;
@@ -350,9 +410,10 @@ body{
     border-radius: 10px;
     background-size: cover;
     background-repeat: no-repeat;
-    
+
 }
-#ban3{
+
+#ban3 {
     background-image: url("images/flower12.jpg");
     background-position: center;
     width: 300px;
@@ -361,7 +422,8 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
 }
-#ban4{
+
+#ban4 {
     background-image: url("images/flower4.jpg");
     background-position: center;
     width: 300px;
@@ -370,31 +432,35 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
 }
-#nose1{
+
+#nose1 {
     position: absolute;
-    color: white;
+    color: rgb(94, 198, 239);
     font-style: italic;
     top: 50px;
     left: 80px;
     font-weight: bold;
 }
-#nose2{
+
+#nose2 {
     position: absolute;
-    color: white;
+    color: red;
     font-style: italic;
     top: 100px;
-    left: 450px;
+    left: 50px;
     font-weight: bold;
 }
-#nose3{
+
+#nose3 {
     position: absolute;
-    color: white;
+    color: rgb(68, 232, 68);
     font-style: italic;
     top: 180px;
-    left: 880px;
+    left: 70px;
     font-weight: bold;
 }
-#nose4{
+
+#nose4 {
     position: absolute;
     color: white;
     font-style: italic;
@@ -402,50 +468,58 @@ body{
     right: 50px;
     font-weight: bold;
 }
+
 /* ----- Ban div ends ----- */
 
 /* ----- Feature div starts ----- */
 
-#features{
+#features {
     width: 100%;
     height: auto;
     padding: 130px 0 20px 0;
     display: flex;
     flex-direction: column;
     transition: 0.5;
-   
+    font-family: 'Times New Roman', Times, serif;
+
 }
-#features h1{
+
+#features h1 {
     text-align: center;
     color: rgb(68, 125, 158);
     margin-bottom: 20px;
 }
 
-#features p{
+#features p {
     margin: 0 20px 20px 20px;
     font-size: 20px;
     font-weight: bold;
     color: black;
 }
 
-#features p span{
+#features p span {
     font-style: italic;
     color: rgb(68, 125, 158);
     font-weight: bold;
 }
-.feat2{
+
+.feat2 {
     width: 100%;
     display: flex;
     padding: 20px;
     justify-content: center;
 }
-#fes,#must,.reach{
+
+#fes,
+#must,
+.reach {
     display: none;
     flex-direction: column;
 
 }
-.fimg{
-    
+
+.fimg {
+
     width: 40%;
     height: 40%;
     object-fit: cover;
@@ -456,13 +530,15 @@ body{
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-.finfo{
+
+.finfo {
     margin-left: 50px;
     width: 40%;
     height: 40%;
     color: black;
 }
-.finfo h3 img{
+
+.finfo h3 img {
     width: 300px;
     height: 200px;
     display: block;
@@ -471,21 +547,21 @@ body{
 }
 
 
-.game{
+.game {
     text-align: center;
     margin-bottom: 30px;
 }
 
-.quizimg{
+.quizimg {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 80px;
     column-gap: 60px;
-   
+
 }
 
-.quizimg img{
+.quizimg img {
     width: 250px;
     height: 250px;
     border-radius: 5px;
@@ -494,13 +570,13 @@ body{
     padding: 2px;
 }
 
-.quizimg img:hover{
+.quizimg img:hover {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     padding: 5px;
     background-color: white;
 }
 
-#newmsg{
+#newmsg {
     background-color: rgb(68, 125, 158);
     color: white;
     font-weight: bold;
@@ -515,7 +591,7 @@ body{
     cursor: pointer;
 }
 
-.newmsg.newopen{
+.newmsg.newopen {
     display: flex;
 }
 
@@ -523,29 +599,30 @@ body{
 
 /* ----- Footer starts ----- */
 
-.foot{
+.foot {
     text-align: center;
     background-color: rgb(68, 125, 158);
     height: 350px;
-    color:white;
+    color: white;
     font-style: italic;
     font-weight: bold;
     padding-top: 20px;
-   
-    
+
+
 }
-.footii{
+
+.footii {
     text-align: center;
     background-color: rgb(68, 125, 158);
     height: 350px;
-    color:white;
+    color: white;
     font-style: italic;
     font-weight: bold;
     padding-top: 20px;
     margin-top: 30px;
 }
 
-.icon{
+.icon {
     width: 30px;
     height: 30px;
     margin: 10px;
@@ -556,15 +633,15 @@ body{
 
 /* ------------- Login.html || Login page Starts ------------ */
 
-#eye4{
+#eye4 {
     width: 450px;
     height: 300px;
-    background-color: rgba(255, 192, 203,0.7);
+    background-color: rgba(255, 192, 203, 0.7);
     position: absolute;
     color: white;
     font-style: italic;
-    top: 250px;
-    left: 100px;
+    top: 120px;
+    left: 50px;
     display: flex;
     flex-direction: column;
     row-gap: 30px;
@@ -573,7 +650,8 @@ body{
     border-radius: 30px;
     padding: 20px;
 }
-#eye4 button{
+
+#eye4 button {
     width: 60px;
     height: 40px;
     background-color: white;
@@ -583,9 +661,11 @@ body{
     border-radius: 4px;
     font-size: 16px;
     font-weight: 900;
-    font-style:italic ;
+    font-style: italic;
+    cursor: pointer;
 }
-.login{
+
+.login {
     width: 300px;
     height: 40px;
     text-align: center;
@@ -596,16 +676,22 @@ body{
     font-weight: 900;
     font-style: italic;
 }
-.able{
+
+.able {
     width: 100%;
     padding-top: 50px;
     padding-left: 20px;
 }
+.able h4{
+    margin-top: 20px;
+    font-size: 20px;
+}
+
 /* ------------- Login.html || Login page ends ------------ */
 
 
 /* ------------- Product.html || Product page Starts ------------ */
-.Products_details{
+.Products_details {
     padding-top: 160px;
     width: 100%;
     height: fit-content;
@@ -617,46 +703,49 @@ body{
     margin-bottom: 20px;
 }
 
-.i1{
-    display: flex;
-    flex-direction: row;
+.i1 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
     gap: 50px;
 }
 
-.flow1{
+.flow1 {
     width: 100%;
     margin-left: 30px;
 }
 
-.flower{
+.flower {
     width: 200px;
     height: 200px;
     object-fit: cover;
     object-position: center;
     margin-bottom: 10px;
-    border-radius:10px ;
+    border-radius: 10px;
 }
 
-.imgtitle{
+.imgtitle {
     width: 300px;
     height: 350px;
     background-color: white;
-    border: 2px inset rgb(68, 125, 158,0.5);
+    border: 2px inset rgb(68, 125, 158, 0.5);
     border-radius: 10px;
     color: black;
     padding: 20px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.imgtitle:hover{
+.imgtitle:hover {
     box-shadow: rgba(0, 0, 0, 0.55) 0px 54px 55px, rgba(0, 0, 0, 0.32) 0px -12px 30px, rgba(0, 0, 0, 0.32) 0px 4px 6px, rgba(0, 0, 0, 0.37) 0px 12px 13px, rgba(0, 0, 0, 0.25) 0px -3px 5px;
 }
 
-.imgdetails,.imgadd{
+.imgdetails,
+.imgadd {
     width: 100%;
     height: 40px;
     margin-bottom: 10px;
-    background-color: rgb(194, 181, 181,0.4);
+    background-color: rgb(194, 181, 181, 0.4);
     border-radius: 5px;
     display: flex;
     flex-direction: row;
@@ -664,19 +753,23 @@ body{
     padding: 8px;
     font-family: 'Playfair Display', serif;
 }
-.cart:hover{
+
+.cart:hover {
     box-shadow: rgba(0, 0, 0, 0.55) 0px 54px 55px, rgba(0, 0, 0, 0.32) 0px -12px 30px, rgba(0, 0, 0, 0.32) 0px 4px 6px, rgba(0, 0, 0, 0.37) 0px 12px 13px, rgba(0, 0, 0, 0.25) 0px -3px 5px;
 }
 
-.wish{
+.wish {
     opacity: 0.5;
 }
-.cart,.wish{
+
+.cart,
+.wish {
     width: 30px;
     height: 30px;
+    cursor: pointer;
 }
 
-.wish.wishy{
+.wish.wishy {
     opacity: 1;
 }
 
@@ -684,8 +777,12 @@ body{
 
 
 /* ------------- Contact.html || Contact page Starts ------------ */
+#eye3 .know {
+    color: rgb(121, 227, 121);
+    font-size: 54px;
+}
 
-.brief{
+.brief {
     width: 100%;
     padding: 70px 20px 20px 20px;
     display: flex;
@@ -694,7 +791,8 @@ body{
     justify-content: center;
     align-items: center;
 }
-.brief .brione{
+
+.brief .brione {
     width: 100%;
     height: 350px;
     border: 1px solid transparent;
@@ -704,24 +802,27 @@ body{
     justify-content: space-around;
     align-items: center;
 }
-.britwo{
+
+.britwo {
     width: 70%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
-.ad{
+
+.ad {
     width: 300px;
     height: 350px;
     background-color: white;
-    border: 2px inset rgb(68, 125, 158,0.5);
+    border: 2px inset rgb(68, 125, 158, 0.5);
     border-radius: 10px;
     color: black;
     padding: 20px;
     text-align: center;
 }
-.sub{
+
+.sub {
     width: 50%;
     height: 280px;
     background-color: white;
@@ -730,29 +831,32 @@ body{
     padding: 20px;
     text-align: center;
 }
-.mesemail{
+
+.mesemail {
     width: 300px;
     height: 35px;
     text-align: center;
     border-radius: 5px;
-    border:1px solid black;
+    border: 1px solid black;
     font-size: 20px;
     font-weight: 900;
     font-style: italic;
     margin: 20px 0 20px 0;
 }
-.mesinfo{
+
+.mesinfo {
     width: 300px;
     height: 70px;
     text-align: center;
     border-radius: 5px;
-    border:1px solid black;
+    border: 1px solid black;
     font-size: 20px;
     font-weight: 900;
     font-style: italic;
     margin: 0 0 20px 0;
 }
-#eyelid{
+
+#eyelid {
     width: 100%;
     align-items: center;
     display: flex;
@@ -760,7 +864,7 @@ body{
     justify-content: center;
 }
 
-.subbut{
+.subbut {
     width: 80px;
     height: 40px;
     background-color: rgb(220, 58, 85);
@@ -770,39 +874,216 @@ body{
     border-radius: 4px;
     font-size: 16px;
     font-weight: 900;
-    font-style:italic;
+    font-style: italic;
     cursor: pointer;
 }
-#thank{
+
+#thank {
     margin-top: 30px;
 }
 
+/* ------- Contact.html || Contact page ends ------- */
 
-/* ------------- Contact.html || Contact page ends ------------ */
+/* ----- mediaqueries for tablet starts ----- */
+@media (min-width:700px) and (max-width:1036px) {
 
-/* Media queries for mobilee device */
+    /* ----- home.html starts --- */
 
-@media (max-width:376px){
-
-    
-/* ------------- front.html || home page starts ------------ */
     .head {
-        height: 100px;
+        width: 100%;
         justify-content: space-between;
         padding: 10px;
-        position: fixed;
-        top: 0;
+    }
+    .head a{
+        display: none;
+    }
+    .logoR {
+        width: 80px;
+        height: 80px;
+        border: 7px groove rgba(255, 255, 255, 0.8);
+        border-radius: 0 10px 0 10px;
+    }
+
+    .royal {
+        font-weight: 600;
+        word-spacing: 1px;
+    }
+    .hambut{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 15px;
+        height: 15px;
+    }
+    .ham{
+        width: 15px;
+        height: 3px;
+        background-color: white;
+    }
+    .bar {
+        width: 250px;
+        height: 300px;
+        background-color: rgba(68, 125, 158,0.8);
+        position: absolute;
+        top: 130px;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: rgba(255,255,255,0.55) 0px 54px 55px, rgba(255,255,255, 0.32) 0px -12px 30px, rgba(255,255,255, 0.32) 0px 4px 6px, rgba(255,255,255, 0.37) 0px 12px 13px, rgba(255,255,255, 0.25) 0px -3px 5px;
+        display: none;
+        justify-content: center;
+        transition: 0.5s;
+    }
+    .bar.active{
+        display: flex;
+    }
+    #eye2 {
+        background-image: url("images/flower8.jpg");
+        background-position: right;
+        width: 100%;
+        height: 500px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #eye3 {
+
+        top: 200px;
+        left: 50px;
+    }
+
+    #eye3 h1 {
+        color: rgb(225, 25, 58);
+    }
+
+    #ban {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 20px;
+    }
+
+    #nose1 {
+        top: 10px;
+        color: blue;
+    }
+
+    #nose2 {
+        top: 10px;
+    }
+
+    #nose3 {
+        top: 250px;
+        color: rgb(6, 125, 6);
+    }
+
+    .feat2 {
+        row-gap: 40px;
+        display: flex;
+        padding: 20px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fimg {
+        width: 70%;
+        height: 30%;
+    }
+
+    .finfo {
+        margin: 0;
+        width: 100%;
+        height: fit-content;
+        color: black;
+    }
+
+    /* ----- home.html ends --- */
+
+    /* ----- login.html starts --- */
+    #eye4 {
+        background-color: rgba(215, 42, 71, 0.7);
+        top: 120px;
+        left: 175px;
+    }
+    .able h4{
+        font-size: 18px;
+    }
+
+    /* ----- login.html ends --- */
+    
+    /* ----- product.html starts --- */
+    .Products_details {
+       
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        
+    }
+    .i1 {
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: center;
+    }
+    
+    /* ----- product.html ends --- */
+    /* ----- contact.html starts --- */
+
+    .brief {
+        width: 100%;
+        height: 1600px;
+        padding: 70px 20px 20px 20px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    .britwo {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .brief .brione {
+        width: 100%;
+        height: 1350px;
+        border: 1px solid transparent;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    /* ----- contact.html ends --- */
+}
+
+/* ----- mediaqueries for tablet ends ----- */
+
+/* ----- mediaqueries for mobile starts ----- */
+
+@media (max-width:699px){
+    .head {
+        width: 100%;
+        justify-content: space-between;
+        height: 100px;
+        padding: 10px;
     }
     .logoR {
         width: 40px;
         height: 40px;
-        border: 10px groove rgba(255, 255, 255,0.8);
-        border-radius: 0 10px 0 10px;
+        border: 4px groove rgba(255, 255, 255, 0.8);
+        border-radius: 0 5px 0 5px;
     }
     .royal {
        font-size: 16px;
+        font-weight:600;
+        word-spacing: 1px;
     }
-    .head a,.head .cartcount,.head .a5{
+    .head a{
         display: none;
     }
     .hambut{
@@ -817,49 +1098,9 @@ body{
         height: 3px;
         background-color: white;
     }
-    #home {
-        margin-top: 20px;
-    }
-    .sidebar {
-        width: 100vw;
-    }
-    .sidebar.start {
-        display: block;
-        left: 0;
-    }
-    #eye{
-        width: 100vw;
-        height: 300px;
-        padding-top: 7px;
-        position: relative;
-    }
-    #eye2{
-        background-image: url("images/flower8.jpg"); 
-        width: 100vw;
-        height: 400px;
-        background-size: contain;
-        
-    }
-    #eye3{
-        position: absolute;
-        color: white;
-        font-style: italic;
-        top: 150px;
-        left: 10px;
-    }
-    #eye3 h1{
-        color: rgb(178, 17, 44);
-        font-size: 24px;
-    }
-    #eye3 .nows {
-        padding: 4px;
-        border-radius: 8px;
-        margin-top: 7px;
-        opacity: 0.8;
-    }
     .bar {
         width: 150px;
-        height: 300px;
+        height: 250px;
         background-color: rgba(68, 125, 158,0.8);
         position: absolute;
         top: 100px;
@@ -873,186 +1114,141 @@ body{
     .bar.active{
         display: flex;
     }
-    #home {
-        margin-top: 10px;
-        padding: 10px;
+    #eye{
+        margin-top: 100px;
+        height: 300px;
     }
-    #homeimg {
-        text-align: center;
-        margin: 20px 0;
+    #eye2 {
+        background-image: url("images/flower8.jpg");
+        background-position: center;
+        width: 100%;
+        height: 300px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #eye3 {
+        top: 50px;
+        left: 30px;
+    }
+
+    #eye3 h1 {
+        color: rgb(225, 25, 58);
+    }
+    #ban {
+        flex-direction: column;
+       justify-content: center;
+       align-items: center;
+        gap: 20px;
+    }
+   
+    #nose1 {
+        top: 10px;
+        color: blue;
+    }
+
+    #nose2 {
+        top: 10px;
+    }
+
+    #nose3 {
+        top: 250px;
+        color: rgb(6, 125, 6);
+    }
+    #nose4 {
+        top: 250px;
+        right: 50px;
+        
+    }
+    #features{
+        padding-top: 100px;
+    }
+    .feat2 {
+        row-gap: 40px;
+        display: flex;
+        padding: 20px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fimg {
+        width: 70%;
+        height: 30%;
+    }
+
+    .finfo {
+        margin: 0;
+        width: 100%;
+        height: fit-content;
+        color: black;
+    }
+    #home {
+        font-size: 16px;
     }
     .imcenter {
         object-fit: cover;
         object-position: center;
         width: 100%;
     }
-    #ban {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        padding: 10px;
-        align-items: center;
-        row-gap: 10px;
-    }
-    #ban1,#ban2,#ban3,#ban4 {
-       width: 250px;
-        height: 250px;  
-    }
-    #nose1 {
-        color: white;
-        top: 10px;
-        left: 80px;
-        font-size: 24px;
-        }
-    #nose2 {
-        color: white;
-        top: 280px;
-        left: 60px;
-        font-size: 24px;
-        }
-    #nose3 {
-        color: white;
-        top: 720px;
-        left: 80px;
-        font-size: 24px;
-        }
-    #nose4 {
-        color: white;
-        top: 970px;
-        left: 40px;
-        font-size: 24px;
-        }
-
-    #features {
-        padding-top: 50px;
-    }
-    .feat2 {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-        justify-content: center;
-        margin-bottom: 0;
-        align-items: center;
-    }
-    .fimg {
-        width: 250px;
-        height: 250px;
-    }
-    .finfo {
-       padding: 20px;
-        margin:20px ;
-        width: 100vw;
-        height: auto;   
-    }
     .finfo h3 img {
-        width: 250px;
-        height: 250px;
+        width: 90%;
+        height: 200px;
+        display: block;
+        margin: 5px auto;
+        border-radius: 10px;
     }
     .quizimg {
         display: flex;
-        justify-content: center;
-        align-items: center;
-       flex-direction: column;
-       row-gap: 10px;
+        flex-direction: column;
+        row-gap: 60px;
     }
-    .foot {
-        text-align: center;
-        background-color: rgb(68, 125, 158);
-        height: 450px;
+    #newmsg {
+       
+        width: 90%;
+        height: 150px;
+        
+    }
+    /* -------- home page ends ----------- */
+
+    /* -----login page starts-------- */
+    #eye4 {
+        width:90%;
+        height: 250px;
+        background-color: rgba(255, 192, 203, 0.7);
+        position: absolute;
         color: white;
         font-style: italic;
-        font-weight: bold;
-        padding: 20px;
-    }
-
-    
-/* ------------- front.html || home page ends ------------ */
-
-
-/* ------------- login.html || login page starts ------------ */
-#eye4 {
-    width: 300px;
-    height: 180px;
-    background-color: rgba(255, 192, 203,0.9);
-    position: absolute;
-    color: white;
-    font-style: italic;
-    top: 120px;
-    left: 10px;
-    padding: 5px;
-    row-gap: 15px;
-}
-.login {
-    width: 200px;
-    height: 30px;
-    font-size: 16px;
-    font-weight: 600;
-   
-}
-#eye4 h2{
-    font-size: 15px;
-}
-
-#eye4 button {
-    height: 30px;
-    padding: 5px;
-    font-size: 13px;
-    font-weight: 700;
-}
-.able {
-    padding: 20px;
-    font-size: 18px;
-    text-align: center;
-}
-.footii{
-    margin-top: 10px;
-    font-size: 14px;
-    padding: 5px;
-    height: 330px;
-}
-/* ------ login.html || login page ends  --------- */
-
-/* ------ product.html || product page starts  --------- */
-    .i1 {
+        top: 20px;
+        left: 20px;
         display: flex;
         flex-direction: column;
-        gap: 50px;
-    }
-    .imgtitle {
-        width: 250px;
-        height: 350px;
-        padding: 10px;
-    }
-    .flow1 {
-        margin-left: 15px;
-    }
-
-    
-    .items {
-        display: flex;
-        flex-direction: column;
+        row-gap: 15px;
         justify-content: center;
         align-items: center;
-        margin-bottom: 20px;
-        row-gap: 10px;
-        padding-bottom: 10px;
-        border-bottom: 2px solid white;
+        border-radius: 30px;
+        padding: 20px;
     }
-    .cartimg img{
+    #eye4 h2{
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .login {
         width: 200px;
-        height: 150px;
-        background-color: white;
-        padding: 3px;
-        object-fit: cover;
-        object-position: center;
-        border-radius: 2px;
-        box-shadow:rgba(255,255,255,0.55) 0px 54px 55px, rgba(255,255,255, 0.32) 0px -12px 30px, rgba(255,255,255, 0.32) 0px 4px 6px, rgba(255,255,255, 0.37) 0px 12px 13px, rgba(255,255,255, 0.25) 0px -3px 5px;
+        font-size: 15px;
+        font-weight: 900;
     }
-    /* ------ product.html || product page ends  --------- */
-
-   
-    /* ------ contact.html || contact page starts  --------- */
+    .able h1{
+        font-size: 20px;
+    }
+    .able h4{
+        font-size: 16px;
+    }
+    /* -------login page ends------ */
+    #eye3 .know {
+        color: rgb(121, 227, 121);
+        font-size: 30px;
+    }
     .brief .brione {
         height: auto;
         flex-direction: column;
@@ -1072,7 +1268,5 @@ body{
         row-gap: 10px;
         
     }
-     /* ------ contact.html || contact page ends  --------- */
 }
-
- /* ------ media queries  ends  --------- */
+/* ----- mediaqueries for mobile ends ----- */
